@@ -2,7 +2,7 @@ import { createMovieCard, movieContainer } from "./create-film-card.js";
 
 // Films, halls data
 const getDataFromServer = () =>
-    fetch('https://f0769682.xsph.ru/', {
+    fetch('//f0769682.xsph.ru/', {
         method: 'POST',
         headers: {
             'Content-Type':'application/x-www-form-urlencoded'
@@ -33,7 +33,7 @@ createMovieCard(dataFromServer, movieContainer);
 
 // Sales with date
 
-fetch('httpsgit ://f0769682.xsph.ru/', {
+fetch('//f0769682.xsph.ru/', {
     method: 'POST',
     headers: {
         'Content-Type':'application/x-www-form-urlencoded'
