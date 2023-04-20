@@ -25,18 +25,6 @@ const makeMovieSeance = (seance) => {
   return fragment;
 }
 
-// const makeMovieHallSeances = () => {
-//   const hallElement = templateSeancesElement.cloneNode(true);
-//   hallElement.querySelector('.movie-seances__hall-title').textContent = hall.hall_name;
-//   const seancesListElement = hallElement.querySelector('.movie-seances__list');
-//   for(let i = 0; i < filmSeances.length; i++) {
-//     if(hall.hall_id === filmSeances[i].seance_hallid) {
-//       seancesListElement.append(makeMovieSeance(filmSeances[i]));
-//     }
-//   }  
-//   sectionElement.append(hallElement);
-// }
-
 const createMovieCard = (movies, container, seances, halls) => {
     container.querySelectorAll('.movie').forEach((element) => element.remove());
     const fragmentMovie = document.createDocumentFragment();
