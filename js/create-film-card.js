@@ -12,7 +12,7 @@ const makeMovieDescription = (movieElement, movie, fragment) => {
   return fragment;
 }
 
-const makeMovieSeance = (seance) => {
+const makeMovieSeance = (seance, weekday) => {
   const fragment = document.createDocumentFragment();
   const listItem = document.createElement('li');
   const hallLink = document.createElement('a');
@@ -20,12 +20,16 @@ const makeMovieSeance = (seance) => {
   hallLink.classList.add('movie-seances__time');
   hallLink.href = 'hall.html';
   hallLink.textContent = seance.seance_time;
+  hallLink.dataset.hallId = seance.seance_hallid;
+  hallLink.dataset.seanceId = seance.seance_id;
+  const timestamp = Number(weekday) + Number(seance.seance_start);
+  hallLink.dataset.timestamp = timestamp; 
   listItem.append(hallLink);
   fragment.append(listItem);
   return fragment;
 }
 
-const createMovieCard = (movies, container, seances, halls) => {
+const createMovieCard = (movies, container, seances, halls, weekday) => {
     container.querySelectorAll('.movie').forEach((element) => element.remove());
     const fragmentMovie = document.createDocumentFragment();
     const templateMovieElement = document.querySelector('.movie_description__template').content;
@@ -48,7 +52,7 @@ const createMovieCard = (movies, container, seances, halls) => {
 
         for(let i = 0; i < filmSeances.length; i++) {
             if(hall.hall_id === filmSeances[i].seance_hallid) {
-              seancesListElement.append(makeMovieSeance(filmSeances[i]));
+              seancesListElement.append(makeMovieSeance(filmSeances[i], weekday));
             }
         }  
         sectionElement.append(hallElement);
