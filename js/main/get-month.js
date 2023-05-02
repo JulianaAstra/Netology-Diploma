@@ -1,4 +1,4 @@
-import { SHORT_MONTHS, LEAP_YEAR } from "./constants.js";
+import { SHORT_MONTHS, LEAP_YEAR } from "../constants.js";
 
 const getMonth = (currentDay, currentMonth) => {
     const month = [];

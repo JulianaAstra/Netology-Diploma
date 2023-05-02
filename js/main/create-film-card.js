@@ -1,4 +1,5 @@
 import { filterHallsByFilm } from "./filter-halls-by-film.js";
+import { gethallConfiguration } from "./get-hall-configuration.js";
 
 const movieContainer = document.querySelector('main');
 
@@ -12,7 +13,7 @@ const makeMovieDescription = (movieElement, movie, fragment) => {
   return fragment;
 }
 
-const makeMovieSeance = (seance, weekday) => {
+const makeMovieSeance = (seance, weekday, halls, movie, hall) => {
   const fragment = document.createDocumentFragment();
   const listItem = document.createElement('li');
   const hallLink = document.createElement('a');
@@ -22,8 +23,36 @@ const makeMovieSeance = (seance, weekday) => {
   hallLink.textContent = seance.seance_time;
   hallLink.dataset.hallId = seance.seance_hallid;
   hallLink.dataset.seanceId = seance.seance_id;
-  const timestamp = Number(weekday) + Number(seance.seance_start);
+  const timestamp = (Number(weekday) / 1000) + (Number(seance.seance_start) * 60);
+  const currentDay = new Date().getTime();
+  const hallConfig = gethallConfiguration(halls, hallLink);
+
+  if (timestamp < Math.floor(currentDay / 1000)) {
+    hallLink.classList.add('disabled');
+  }
+
   hallLink.dataset.timestamp = timestamp; 
+  
+  const onSeanceClick = (evt) => {
+    evt.preventDefault();
+    window.localStorage.clear();
+    window.location.href = '/hall.html';
+    console.log(hall.hall_price_standart);
+    const priceStandart = hall.hall_price_standart;
+    const priceVip = hall.hall_price_vip;
+    window.localStorage.setItem('priceStandart', `${priceStandart}`);
+    window.localStorage.setItem('priceVip', `${priceVip}`);
+    window.localStorage.setItem('timestamp', `${timestamp}`);
+    window.localStorage.setItem('hallId', `${hallLink.dataset.hallId}`);
+    window.localStorage.setItem('seanceId', `${hallLink.dataset.seanceId}`);
+    window.localStorage.setItem('hallConfig', `${hallConfig}`);
+    window.localStorage.setItem('filmName', `${movie.film_name}`);
+    window.localStorage.setItem('seanceTime', `${seance.seance_time}`);
+    window.localStorage.setItem('hallName', `${hall.hall_name}`);
+  }
+
+  hallLink.addEventListener('click', onSeanceClick);
+
   listItem.append(hallLink);
   fragment.append(listItem);
   return fragment;
@@ -52,7 +81,7 @@ const createMovieCard = (movies, container, seances, halls, weekday) => {
 
         for(let i = 0; i < filmSeances.length; i++) {
             if(hall.hall_id === filmSeances[i].seance_hallid) {
-              seancesListElement.append(makeMovieSeance(filmSeances[i], weekday));
+              seancesListElement.append(makeMovieSeance(filmSeances[i], weekday, halls, movie, hall));
             }
         }  
         sectionElement.append(hallElement);
@@ -61,4 +90,4 @@ const createMovieCard = (movies, container, seances, halls, weekday) => {
   });
 }
 
-export {createMovieCard, movieContainer};
+export { createMovieCard, movieContainer };

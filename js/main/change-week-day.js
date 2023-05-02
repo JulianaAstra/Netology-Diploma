@@ -22,7 +22,7 @@ const onNavigationPanelClick = (evt) => {
         }
 
         if (evt.target.matches('a')) {
-            const weekday = evt.target.parentNode.dataset.timestamp;
+            const weekday = evt.target.dataset.timestamp;
             evt.target.classList.add('page-nav__day_chosen');
             createMovieCard(films, movieContainer, seances, halls, weekday);
             return;

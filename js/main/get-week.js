@@ -1,8 +1,8 @@
 import { getMonth } from "./get-month.js";
-import { DAYS_IN_WEEK, WEEK_DAYS } from "./constants.js";
+import { DAYS_IN_WEEK, WEEK_DAYS } from "../constants.js";
 
 const getWeek = () => {
-    const currentDay = new Date(2023, 3, 27);
+    const currentDay = new Date();
     const currentMonth = currentDay.getMonth();
     const dayNumber = currentDay.getDate() - 1;
     const currentDayCount = currentDay.getDay();
@@ -19,7 +19,10 @@ const getWeek = () => {
                 count = 0;
             }
             const dayCount = WEEK_DAYS[count];
-            dayWithName[day] = dayCount.name;
+            dayWithName['day'] = day;
+            dayWithName['day_name'] = dayCount.name;
+            dayWithName['month'] = currentMonth;
+            dayWithName['year'] = currentDay.getFullYear();
             weekMassive.push(dayWithName);
             count++;
         });
@@ -29,20 +32,37 @@ const getWeek = () => {
     if ((month.length - dayNumber) <= DAYS_IN_WEEK) {
         const nextMonth = getMonth(currentDay, currentMonth + 1);
         const week = month.slice(dayNumber);
-        const daysInNextMonth = DAYS_IN_WEEK - week.length;
-        const nextWeek = nextMonth.slice(0, daysInNextMonth);
-        const newWeek = [...week, ...nextWeek];
-        
-        newWeek.forEach((day) => {
+        week.forEach((day) => {
             const dayWithName = {};
             if (count > 6) {
                 count = 0;
             }
             const dayCount = WEEK_DAYS[count];
-            dayWithName[day] = dayCount.name;
+            dayWithName['day'] = day;
+            dayWithName['day_name'] = dayCount.name;
+            dayWithName['month'] = currentMonth;
+            dayWithName['year'] = currentDay.getFullYear();
             weekMassive.push(dayWithName);
             count++;
         });
+
+        const daysInNextMonth = DAYS_IN_WEEK - week.length;
+        const nextWeek = nextMonth.slice(0, daysInNextMonth);
+
+        nextWeek.forEach((day) => {
+            const dayWithName = {};
+            if (count > 6) {
+                count = 0;
+            }
+            const dayCount = WEEK_DAYS[count];
+            dayWithName['day'] = day;
+            dayWithName['day_name'] = dayCount.name;
+            dayWithName['month'] = currentMonth + 1;
+            dayWithName['year'] = currentDay.getFullYear();
+            weekMassive.push(dayWithName);
+            count++;
+        });
+        
         return weekMassive;
     }
 }

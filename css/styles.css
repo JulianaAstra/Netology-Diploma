@@ -172,7 +172,7 @@ body {
 }
 
 /* ~~~~~~~~~~~~ Кинозал ~~~~~~~~~~~~ */
-.acceptin-button {
+.acception-button {
   display: block;
   margin: 3rem auto 0;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24), 0px 0px 3px rgba(0, 0, 0, 0.12);
@@ -184,6 +184,7 @@ body {
   font-size: 1.4rem;
   background-color: #16A6AF;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .buying {
@@ -262,6 +263,7 @@ body {
   border: 1px solid #525252;
   box-sizing: border-box;
   border-radius: 4px;
+  cursor: pointer;
 }
 .conf-step__chair:not(:first-of-type) {
   margin-left: 4px;
@@ -269,6 +271,7 @@ body {
 
 .conf-step__chair_disabled {
   opacity: 0;
+  cursor: default;
 }
 
 .conf-step__chair_standart {
@@ -433,14 +436,18 @@ body {
 
 /*================================================================*/
 
-.movie .movie-seances__hall .acceptin-button-disabled {
+.movie .movie-seances__hall .acception-button-disabled {
  background-color: #888888;
  pointer-events: none
 }
 
-.acceptin-button:disabled {
+.acception-button:disabled {
   background-color: #888888;
   pointer-events: none
  }
 
-
+ .movie .movie-seances__hall .movie-seances__time.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: rgb(192, 188, 188);
+}
