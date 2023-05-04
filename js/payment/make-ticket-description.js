@@ -9,7 +9,7 @@ const {fullPrice, seats, filmName, seanceTime, hallName} = window.localStorage;
 const makeTicketDescription = () => {
     filmNameElement.textContent = filmName;
     seatsNumbersElement.textContent = seats;
-    hallNumberElement.textContent = hallName;
+    hallNumberElement.textContent = hallName.slice(-1);
     seanceTimeElement.textContent = seanceTime;
     fullPriceElement.textContent = fullPrice;
 }
