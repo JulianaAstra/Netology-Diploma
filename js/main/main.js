@@ -22,7 +22,7 @@ const getDataFromServer = () =>
 
 
 const dataFromServer = await getDataFromServer();
-console.log(dataFromServer);
+// console.log(dataFromServer);
 const films = dataFromServer.films.result;
 const seances = dataFromServer.seances.result;
 const halls = dataFromServer.halls.result;

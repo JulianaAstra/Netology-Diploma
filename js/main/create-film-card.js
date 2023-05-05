@@ -35,9 +35,9 @@ const makeMovieSeance = (seance, weekday, halls, movie, hall) => {
   
   const onSeanceClick = (evt) => {
     evt.preventDefault();
-    window.localStorage.clear();
+    // window.localStorage.clear();
     window.location.href = '/hall.html';
-    console.log(hall.hall_price_standart);
+    // console.log(hall.hall_price_standart);
     const priceStandart = hall.hall_price_standart;
     const priceVip = hall.hall_price_vip;
     window.localStorage.setItem('priceStandart', `${priceStandart}`);

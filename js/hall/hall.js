@@ -2,7 +2,7 @@ import { createHall, onReserveButtonClick, onSeatClick, reserveButton, hallConta
 
 const {hallName, hallConfig, timestamp, hallId, seanceId, filmName, seanceTime, priceVip, priceStandart} = window.localStorage;
 
-console.log(localStorage);
+// console.log(localStorage);
 
 const getHallFromServer = () => 
     fetch('http://f0769682.xsph.ru/', {
