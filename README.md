@@ -1,7 +1,7 @@
 ## Дипломная работа профессии «JavaScript-программированиe»
 
 ### Студентка: Карнаусова Юлия
-### [Site Deploy](diploma-final-karnausova.netlify.app)
+### [ИдёмВКино](diploma-final-karnausova.netlify.app)
 
 В работе использованы:
 - JavaScript
