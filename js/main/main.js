@@ -20,18 +20,16 @@ const getDataFromServer = () =>
             console.log(error);
         });
 
-
+        
 const dataFromServer = await getDataFromServer();
-
 const films = dataFromServer.films.result;
 const seances = dataFromServer.seances.result;
 const halls = dataFromServer.halls.result;
-
 const chosenDayElement = document.querySelector('.page-nav__day_chosen');
 const chosenDayTimestamp = chosenDayElement.dataset.timestamp;
 
 createMovieCard(films, movieContainer, seances, halls, chosenDayTimestamp);
-getCurrentDate();
 
+getCurrentDate();
 
 export { films, seances, halls };
