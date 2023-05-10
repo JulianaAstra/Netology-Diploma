@@ -18,14 +18,11 @@ const makeFilmDescription = (filmName, seanceTime, hallName) => {
     const hallNum = getHallNumber(hallName);
 
     hallCardFilmNameElement.textContent = filmName;
-    // console.log(`film name: ${filmName}`);
     hallCardFilmTimeElement.textContent = `Начало сеанса: ${seanceTime}`;
     hallCardHallNameElement.textContent = `Зал ${hallNum}`;
 };
 
 const makeLegendDescription = (priceVip, priceStandart) => {
-    // console.log(priceVip);
-
     const priceVipElement = document.querySelector('.price-vip');
     const priceStandardElement = document.querySelector('.price-standart');
     priceStandardElement.textContent = priceStandart;
