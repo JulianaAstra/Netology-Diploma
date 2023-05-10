@@ -3,7 +3,7 @@ import { createHall, onReserveButtonClick, onSeatClick, reserveButton, hallConta
 const {hallName, hallConfig, timestamp, hallId, seanceId, filmName, seanceTime, priceVip, priceStandart} = window.localStorage;
 
 const getHallFromServer = () => 
-    fetch('http://f0769682.xsph.ru/', {
+    fetch('https://jscp-diplom.tw1.ru/', {
         method: 'POST',
         headers: {
             'Content-Type':'application/x-www-form-urlencoded'

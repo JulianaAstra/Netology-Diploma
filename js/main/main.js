@@ -2,7 +2,7 @@ import { createMovieCard, movieContainer } from './create-film-card.js';
 import { getCurrentDate } from './get-current-date.js';
 
 const getDataFromServer = () => 
-    fetch('http://f0769682.xsph.ru/', {
+    fetch('https://jscp-diplom.tw1.ru/', {
         method: 'POST',
         headers: {
             'Content-Type':'application/x-www-form-urlencoded'
