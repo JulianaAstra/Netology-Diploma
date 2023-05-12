@@ -414,7 +414,7 @@ body {
   margin: 3rem auto 0;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 478px){
   .conf-step {
     padding: 1rem 2rem;
   }
@@ -428,6 +428,22 @@ body {
     width: 162px;
     height: 162px;
   }
+
+  .movie .movie__info  {
+    flex-direction: column;
+  }
+
+  p.movie__data {
+    margin-bottom: 20px;
+  }
+
+  .movie__synopsis {
+    padding-right: 1.5rem;
+  }
+
+  .movie .movie__description {
+    padding-left: 0;
+  }
 }
 
 @media screen and (min-width: 479px) {
@@ -435,6 +451,7 @@ body {
     padding: 1rem 2rem;
   }
 }
+
 @media screen and (min-width: 990px) {
   .page-header, nav, main {
     width: 990px;
