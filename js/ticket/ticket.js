@@ -8,7 +8,6 @@ const date = dayjs.unix(timestamp).format('DD/MM/YYYY');
 
 makeFinalTicketDescription();
 getQrCode(filmName, hallName, seats, date, seanceTime);
-window.localStorage.clear()
 
 export { seats, filmName, seanceTime, hallName};
 

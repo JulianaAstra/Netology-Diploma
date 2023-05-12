@@ -2,7 +2,7 @@ import { createMovieCard, movieContainer } from './create-film-card.js';
 import { getCurrentDate } from './get-current-date.js';
 
 const getDataFromServer = () => 
-    fetch('https://jscp-diplom.tw1.ru/', {
+    fetch('https://jscp-diplom.netoserver.ru/', {
         method: 'POST',
         headers: {
             'Content-Type':'application/x-www-form-urlencoded'
@@ -28,6 +28,7 @@ const halls = dataFromServer.halls.result;
 const chosenDayElement = document.querySelector('.page-nav__day_chosen');
 const chosenDayTimestamp = chosenDayElement.dataset.timestamp;
 
+window.localStorage.clear();
 createMovieCard(films, movieContainer, seances, halls, chosenDayTimestamp);
 
 getCurrentDate();
