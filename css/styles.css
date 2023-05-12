@@ -408,8 +408,8 @@ body {
 }
 
 .ticket__info-qr {
-  width: 162px;
-  height: 162px;
+  max-width: 178px;
+  max-height: 178px;
   display: block;
   margin: 3rem auto 0;
 }
@@ -434,8 +434,8 @@ body {
   }
 
   .ticket__info-qr {
-    width: 162px;
-    height: 162px;
+    max-width: 178px;
+    max-height: 178px;
   }
 
   .movie .movie__info  {
