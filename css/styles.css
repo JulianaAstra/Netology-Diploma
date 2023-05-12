@@ -416,7 +416,16 @@ body {
 
 @media screen and (max-width: 478px){
   .conf-step {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
+  }
+
+  section.buying,
+  section.ticket {
+   margin: 0 1rem 0; 
+  }
+
+  .acception-button {
+    line-height: 2rem;
   }
 
   .conf-step__legend-price .conf-step__chair_selected,
@@ -450,6 +459,20 @@ body {
   .page-nav .page-nav__day {
     padding: 1rem 2rem;
   }
+
+  .conf-step__legend-price .conf-step__chair_selected,
+  .conf-step__legend-price .conf-step__chair_taken {
+    margin-right: 3px;
+  }
+
+  .conf-step {
+    padding: 1rem 2rem;
+  }
+
+  section.buying,
+  section.ticket {
+    margin: 0 1rem 0; 
+   }
 }
 
 @media screen and (min-width: 990px) {
