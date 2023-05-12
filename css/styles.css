@@ -408,10 +408,26 @@ body {
 }
 
 .ticket__info-qr {
+  width: 162px;
+  height: 162px;
   display: block;
   margin: 3rem auto 0;
-  width: 20rem;
-  height: 20rem;
+}
+
+@media screen and (min-width: 320px) {
+  .conf-step {
+    padding: 1rem 2rem;
+  }
+
+  .conf-step__legend-price .conf-step__chair_selected,
+  .conf-step__legend-price .conf-step__chair_taken {
+    margin-right: 3px;
+  }
+
+  .ticket__info-qr {
+    width: 162px;
+    height: 162px;
+  }
 }
 
 @media screen and (min-width: 479px) {
