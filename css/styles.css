@@ -408,9 +408,8 @@ body {
 }
 
 .ticket__info-qr {
-  max-width: 178px;
-  max-height: 178px;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 3rem auto 0;
 }
 
@@ -431,11 +430,6 @@ body {
   .conf-step__legend-price .conf-step__chair_selected,
   .conf-step__legend-price .conf-step__chair_taken {
     margin-right: 3px;
-  }
-
-  .ticket__info-qr {
-    max-width: 178px;
-    max-height: 178px;
   }
 
   .movie .movie__info  {
