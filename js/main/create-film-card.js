@@ -35,7 +35,7 @@ const makeMovieSeance = (seance, weekday, halls, movie, hall) => {
   
   const onSeanceClick = (evt) => {
     evt.preventDefault();
-    window.location.href = '/hall.html';
+    window.location.href = '.../hall.html';
     const priceStandart = hall.hall_price_standart;
     const priceVip = hall.hall_price_vip;
     window.localStorage.setItem('priceStandart', `${priceStandart}`);
