@@ -3,11 +3,31 @@ import { gethallConfiguration } from "./get-hall-configuration.js";
 
 const movieContainer = document.querySelector('main');
 
+const getSuitableMinutesString = (num) => {
+  const lastChar = String(num).slice(-1);
+  let suitableMinutesString = null;
+
+  switch(lastChar) {
+    case '1':
+      suitableMinutesString = 'минута';
+      break;
+    case '2':
+    case '3':
+    case '4':
+      suitableMinutesString = 'минуты';
+      break;
+    default:
+      suitableMinutesString = 'минут';
+      break;
+  }
+  return suitableMinutesString;
+}
+
 const makeMovieDescription = (movieElement, movie, fragment) => {
   movieElement.querySelector('.movie__poster-image').src = movie.film_poster;
   movieElement.querySelector('.movie__title').textContent = movie.film_name;
   movieElement.querySelector('.movie__synopsis').textContent = movie.film_description;
-  movieElement.querySelector('.movie__data-duration').textContent = `${movie.film_duration} минут`;
+  movieElement.querySelector('.movie__data-duration').textContent = `${movie.film_duration} ${getSuitableMinutesString(movie.film_duration)}`;
   movieElement.querySelector('.movie__data-origin').textContent = movie.origin;
   fragment.appendChild(movieElement);
   return fragment;
