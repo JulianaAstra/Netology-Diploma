@@ -447,6 +447,10 @@ body {
   .movie .movie__description {
     padding-left: 0;
   }
+
+  .movie .movie__poster {
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 479px) {
