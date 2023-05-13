@@ -98,7 +98,7 @@ const onReserveButtonClick = () => {
     window.localStorage.setItem('reserveHall', hall);
     window.localStorage.setItem('seats', seatsInfo.join());
     window.localStorage.setItem('fullPrice', `${getFullPrice(seatsPrices)}`);
-    window.location.href = '/payment.html';
+    window.location.href = './payment.html';
 }
 
 export { createHall, onReserveButtonClick, onSeatClick, reserveButton, hallContainerElement };

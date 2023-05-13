@@ -19,7 +19,7 @@ const makeMovieSeance = (seance, weekday, halls, movie, hall) => {
   const hallLink = document.createElement('a');
   listItem.classList.add('movie-seances__time-block');
   hallLink.classList.add('movie-seances__time');
-  hallLink.href = '../hall.html';
+  hallLink.href = './hall.html';
   hallLink.textContent = seance.seance_time;
   hallLink.dataset.hallId = seance.seance_hallid;
   hallLink.dataset.seanceId = seance.seance_id;

@@ -26,7 +26,7 @@ const onReserveButtonClick = (evt) => {
     evt.preventDefault();
     window.localStorage.setItem('ticketId', Date.now());
     sendReserveToServer();
-    window.location.href = '/ticket.html';
+    window.location.href = './ticket.html';
 }
 
 makeTicketDescription();
